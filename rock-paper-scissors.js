@@ -7,93 +7,100 @@ let scissorsElement = document.querySelector(
   '.js-button-scissors');
 let clearElement = document.querySelector('.js-button-clear');
 
-let userInput ='';
-let compInput = computerChoice();
+let userInput = '';
+let compInput = '';
 
 rockElement.addEventListener('click',()=>{
-  let userInput = 'rock'
-  console.log(userInput);
-  choices();
-  results();
+  let userInput = 'rock';
+  results(userInput);
 });
+
 paperElement.addEventListener('click',()=>{
-  let userInput = 'paper'
-  console.log(userInput);
-  computerChoice();
-  choices();
-  results();
+  let userInput = 'paper';
+  results(userInput);
 });
+
 scissorsElement.addEventListener('click',()=>{
-  let userInput = 'scissors'
-  console.log(userInput);
-  computerChoice();
-  choices();
-  results();
+  let userInput = 'scissors';
+  results(userInput);
 });
+
 clearElement.addEventListener('click',()=>{
-
+  clear();
 });
 
+function results(userInput) {
+  let compInput = computerChoice();
 
-function choices() {
-  
+  console.log(userInput);
+  console.log(compInput);
+
   document.getElementById('user-input').innerHTML = `you chose ${userInput}`;
-
+    
   document.getElementById('comp-input').innerHTML = `poop chose ${compInput}`;
-}
 
-function results() {
-  if (compInput === userInput) {
-    document.getElementById('results').innerHTML = `it's a tie!`;
-  } 
-  else if (compInput !== userInput){
-    compare();
-  }
-}
-
-function compare () {
-  if (userInput === 'rock'){
-    if (compInput === 'scissors'){
-      document.getElementById('results').innerHTML = `you win!`;
-    }
-    else if (compInput === 'paper'){
-      document.getElementById('results').innerHTML = `you lose`;
-    }
-  }
-
-  if (userInput === 'paper'){
-    if (compInput === 'rock'){
-      document.getElementById('results').innerHTML = `you win!`;
-    }
-    else if (compInput === 'scissors'){
-      document.getElementById('results').innerHTML = `you lose`;
-    }
-  }
-
-  if (userInput === 'scissors'){
-    if (compInput === 'paper'){
-      document.getElementById('results').innerHTML = `you win!`;
-    }
-    else if (compInput === 'rock'){
-      document.getElementById('results').innerHTML = `you lose`;
-    }
-  }
+  winnerDisplay(userInput, compInput);
 
 
   }
+
+function winnerDisplay(userInput, compInput) {
+    if (compInput !== userInput) {
+      console.log(userInput);
+      console.log(compInput);
+
+        if (userInput === 'rock'){
+          if (compInput === 'scissors'){
+            document.getElementById('results').innerHTML = `you win!`;
+          }
+          else if (compInput === 'paper'){
+            document.getElementById('results').innerHTML = `you lose`;
+          }
+        }
+      
+        if (userInput === 'paper'){
+          if (compInput === 'rock'){
+            document.getElementById('results').innerHTML = `you win!`;
+          }
+          else if (compInput === 'scissors'){
+            document.getElementById('results').innerHTML = `you lose`;
+          }
+        }
+      
+        if (userInput === 'scissors'){
+          if (compInput === 'paper'){
+            document.getElementById('results').innerHTML = `you win!`;
+          }
+          else if (compInput === 'rock'){
+            document.getElementById('results').innerHTML = `you lose`;
+          }
+        }
+      } else if (compInput === userInput) {
+        document.getElementById('results').innerHTML = `it's a tie!`;
+      }
+    }
 
 function computerChoice() {
-  let randomNum = Math.floor(Math.random() * 3); 
+    let randomNum = Math.floor(Math.random() * 3); 
 
-  if (randomNum == 0) {
-    return 'rock'
-  }
-  else if (randomNum == 1){
-    return'paper';
-  }
-  else if (randomNum == 2){
-    return 'scissors';
-  }
+    if (randomNum == 0) {
+      return 'rock'
+    }
+    else if (randomNum == 1){
+      return'paper';
+    }
+    else if (randomNum == 2){
+      return 'scissors';
+    }
+  }  
 
+function clear() {
+  let compInput = '';
+  let userInput = '';
+
+  document.getElementById('results').innerHTML = ``;
+
+  document.getElementById('user-input').innerHTML = ``;
+
+  document.getElementById('comp-input').innerHTML = ``;
 }
-
