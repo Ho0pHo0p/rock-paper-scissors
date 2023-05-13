@@ -7,6 +7,13 @@ let scissorsElement = document.querySelector(
   '.js-button-scissors');
 let clearElement = document.querySelector('.js-button-clear');
 
+rockElement.innerHTML = "<img src='images/rock.png' alt='rock'><p>rock</p>";
+
+paperElement.innerHTML = "<img src='images/paper2.png' alt='rock'><p>paper</p>";
+
+scissorsElement.innerHTML = "<img src='images/scissors.png' alt='rock'><p>scissors</p>";
+
+
 let userInput = '';
 let compInput = '';
 

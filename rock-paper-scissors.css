@@ -11,13 +11,19 @@ body {
   color: rgba(239, 212, 242, 1);
 }
 
-.js-button-rock, 
-.js-button-paper, 
-.js-button-scissors, 
-.js-button-clear {
-  
+.js-button-rock img, .js-button-paper img, .js-button-scissors img {
+  height: 150px;
 }
 
+.js-button-rock, .js-button-paper, .js-button-scissors {
+  background-color: transparent;
+  border: none;
+}
+
+.user-choice-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 
 
