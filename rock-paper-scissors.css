@@ -1,0 +1,23 @@
+/* Color Theme Swatches in RGBA */
+.Barbie-1-rgba { color: rgba(216, 172, 214, 1); }
+.Barbie-2-rgba { color: rgba(239, 212, 242, 1); }
+.Barbie-3-rgba { color: rgba(137, 123, 140, 1); }
+.Barbie-4-rgba { color: rgba(170, 163, 216, 1); }
+.Barbie-5-rgba { color: rgba(242, 242, 242, 1); }
+
+
+body {
+  background-color: rgba(137, 123, 140, 1);
+  color: rgba(239, 212, 242, 1);
+}
+
+.js-button-rock, 
+.js-button-paper, 
+.js-button-scissors, 
+.js-button-clear {
+  
+}
+
+
+
+
